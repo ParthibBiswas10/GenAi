@@ -1,4 +1,5 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from langchain.schema import HumanMessage, AIMessage, SystemMessage
 from dotenv import load_dotenv
 import os
 
@@ -18,10 +19,12 @@ model = ChatHuggingFace(llm=llm)
 history=[]
 while True:
     user=input("You: ")
-    history.append(user)
+    history.append(HumanMessage(content=user))
     if user=='exit':
         break
     result=model.invoke(history)
-    history.append(result.content)
+    history.append(AIMessage(content=result.content))
     print("AI: ",result.content)
 
+print("Exiting chat...")
+print(history)
