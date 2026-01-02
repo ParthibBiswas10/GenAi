@@ -5,7 +5,7 @@ import os
 
 load_dotenv()
 llm = ChatGroq(
-    model="llama-3.1-8b-instant",   # fast + free-tier friendly
+    model="llama-3.1-8b-instant", 
     
 )
 
