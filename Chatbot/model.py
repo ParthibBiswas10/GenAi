@@ -11,7 +11,7 @@ load_dotenv()
 llm = HuggingFaceEndpoint(
     repo_id="zai-org/GLM-4.6",
     task="text-generation",
-    
+    temperature=0.1,
 
 )
 
@@ -26,5 +26,5 @@ while True:
     history.append(AIMessage(content=result.content))
     print("AI: ",result.content)
 
-print("Exiting chat...")
+print("Exiting chat...gm")
 print(history)
